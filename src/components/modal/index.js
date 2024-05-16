@@ -3,9 +3,12 @@ import * as Clipboard from 'expo-clipboard'
 
 export function ModalPassword({password, handleClose}){
 
+    //Salva a senha no ctrl + c e exibe um alerta de copiado
     async function handleCopyPassword(){
         await Clipboard.setStringAsync(password)
         alert("Senha copiada")
+
+        handleClose()
     }
     
     return(
